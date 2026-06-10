@@ -149,7 +149,7 @@ export default function Home() {
         </div>
         <p className="footnote">
           Demo data only — answers are grounded in retrieved records, sources
-          shown per reply.
+          shown per reply. Made with ❤️ in Youngstown | Nishan Chaulagain
         </p>
       </div>
     </main>
