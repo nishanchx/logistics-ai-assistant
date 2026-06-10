@@ -1,0 +1,334 @@
+:root {
+  --ink: #15273f;        /* deep navy — primary text */
+  --ink-soft: #51647e;   /* muted slate — secondary text */
+  --paper: #f2f4f6;      /* cool paper — page background */
+  --card: #ffffff;       /* cards / messages */
+  --line: #d4dbe3;       /* hairline borders */
+  --signal: #e8581c;     /* cargo orange — accents & actions */
+  --signal-soft: #fdeee6;
+  --ok: #1d7a4f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: 880px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+/* ---------- Header: routing-strip masthead ---------- */
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 0 18px;
+  border-bottom: 3px solid var(--ink);
+}
+
+.masthead h1 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 40px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.masthead h1 .accent {
+  color: var(--signal);
+}
+
+.masthead .route-tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ---------- Conversation ---------- */
+.thread {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px 0 16px;
+}
+
+.msg {
+  max-width: 92%;
+  animation: rise 0.25s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .msg {
+    animation: none;
+  }
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 14px 14px 4px 14px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Assistant message = a waybill card */
+.msg.assistant {
+  align-self: flex-start;
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.waybill-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 14px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.waybill-strip .dot {
+  color: var(--signal);
+}
+
+.msg.assistant .body {
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+/* Source "cargo tags" */
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 14px;
+}
+
+.tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--signal);
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+
+.msg.error .body {
+  color: #a32813;
+}
+
+/* Typing indicator */
+.typing {
+  display: inline-flex;
+  gap: 5px;
+  padding: 16px;
+}
+
+.typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  animation: blink 1.2s infinite both;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* ---------- Empty state & suggestions ---------- */
+.empty {
+  padding: 40px 0 8px;
+}
+
+.empty .kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin-bottom: 10px;
+}
+
+.empty h2 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 4vw, 30px);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+}
+
+.empty p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  max-width: 56ch;
+}
+
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.suggestions button {
+  font-family: var(--font-body), sans-serif;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.45;
+  padding: 12px 14px;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.suggestions button:hover {
+  border-color: var(--signal);
+  transform: translateY(-1px);
+}
+
+.suggestions button:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.suggestions .q-label {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin-bottom: 4px;
+}
+
+/* ---------- Composer ---------- */
+.composer {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(to top, var(--paper) 75%, transparent);
+  padding: 12px 0 20px;
+}
+
+.composer-inner {
+  display: flex;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.composer-inner:focus-within {
+  border-color: var(--signal);
+}
+
+.composer input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-body), sans-serif;
+  font-size: 15px;
+  padding: 8px 10px;
+  background: transparent;
+  color: var(--ink);
+}
+
+.composer button {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--signal);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0 22px;
+  cursor: pointer;
+}
+
+.composer button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.composer button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.footnote {
+  text-align: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  padding-top: 10px;
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "A123",
+    "customer": "Methodist Health System",
+    "origin": "Dallas, TX (Warehouse 2)",
+    "destination": "Fort Worth, TX",
+    "carrier": "OTSL Fleet — Truck 14",
+    "contents": "Medical supplies — IV kits, 42 cartons",
+    "priority": "URGENT",
+    "status": "In transit",
+    "eta": "2026-06-10 16:30 CT",
+    "notes": "Hospital dock requires delivery before 17:00. Driver checked in at I-30 checkpoint at 14:05."
+  },
+  {
+    "id": "A124",
+    "customer": "Texas Instruments",
+    "origin": "Houston, TX",
+    "destination": "Richardson, TX",
+    "carrier": "OTSL Fleet — Truck 7",
+    "contents": "Electronic components, 18 pallets",
+    "priority": "Standard",
+    "status": "Delayed",
+    "eta": "2026-06-11 09:00 CT (revised from 06-10 18:00)",
+    "notes": "Delay cause: severe weather on I-45 near Corsicana. Customer notified at 12:40. No damage reported."
+  },
+  {
+    "id": "A125",
+    "customer": "Baylor Scott & White",
+    "origin": "Dallas, TX (Warehouse 1)",
+    "destination": "Waco, TX",
+    "carrier": "Partner carrier — LoneStar Freight",
+    "contents": "Lab equipment, 6 crates, fragile",
+    "priority": "High",
+    "status": "Delivered",
+    "eta": "Delivered 2026-06-09 11:20 CT",
+    "notes": "POD signed by R. Alvarez. One crate flagged with minor corner dent — damage report DR-0288 filed, photos attached."
+  },
+  {
+    "id": "A126",
+    "customer": "City of Dallas — Fleet Services",
+    "origin": "San Antonio, TX",
+    "destination": "Dallas, TX (Municipal Yard B)",
+    "carrier": "OTSL Fleet — Truck 22",
+    "contents": "Vehicle parts, 9 pallets",
+    "priority": "Standard",
+    "status": "In transit",
+    "eta": "2026-06-10 19:45 CT",
+    "notes": "On schedule. Toll route approved per customer contract."
+  },
+  {
+    "id": "A127",
+    "customer": "AT&T Network Operations",
+    "origin": "Dallas, TX (Warehouse 2)",
+    "destination": "Oklahoma City, OK",
+    "carrier": "Partner carrier — RedRiver Logistics",
+    "contents": "Fiber optic cable spools, 12 pallets",
+    "priority": "High",
+    "status": "Delayed",
+    "eta": "2026-06-11 14:00 CT (revised from 06-10 20:00)",
+    "notes": "Delay cause: partner carrier truck breakdown near Denton. Load transferred to backup truck at 13:15. Escalated to dispatch supervisor per SOP-DEL-02."
+  },
+  {
+    "id": "A128",
+    "customer": "Parkland Hospital",
+    "origin": "Dallas, TX (Warehouse 1)",
+    "destination": "Dallas, TX (Parkland Main Campus)",
+    "carrier": "OTSL Fleet — Van 3",
+    "contents": "Pharmacy restock, temperature-controlled, 8 totes",
+    "priority": "URGENT",
+    "status": "Out for delivery",
+    "eta": "2026-06-10 15:10 CT",
+    "notes": "Cold chain verified at 13:50 — reefer unit at 4.1°C. Must scan totes at pharmacy intake, not main dock."
+  },
+  {
+    "id": "A129",
+    "customer": "Toyota North America",
+    "origin": "El Paso, TX",
+    "destination": "Plano, TX",
+    "carrier": "Partner carrier — LoneStar Freight",
+    "contents": "Office relocation equipment, 24 pallets",
+    "priority": "Standard",
+    "status": "Scheduled",
+    "eta": "Pickup 2026-06-12 08:00 CT, delivery 06-13 17:00 CT",
+    "notes": "Two-driver team assigned. Customer requires liftgate at destination."
+  },
+  {
+    "id": "A130",
+    "customer": "Texas Health Resources",
+    "origin": "Austin, TX",
+    "destination": "Arlington, TX",
+    "carrier": "OTSL Fleet — Truck 9",
+    "contents": "Surgical instruments, 4 crates",
+    "priority": "High",
+    "status": "Exception",
+    "eta": "On hold — pending customs documentation",
+    "notes": "Shipment contains imported instruments; missing FDA import release form. Compliance team contacted 2026-06-09. Customer aware. Follow SOP-DOC-04."
+  },
+  {
+    "id": "A131",
+    "customer": "Frito-Lay (PepsiCo)",
+    "origin": "Dallas, TX (Warehouse 3)",
+    "destination": "Lubbock, TX",
+    "carrier": "OTSL Fleet — Truck 18",
+    "contents": "Packaging material, 20 pallets",
+    "priority": "Standard",
+    "status": "Delivered",
+    "eta": "Delivered 2026-06-08 16:05 CT",
+    "notes": "POD signed by M. Tran. No exceptions."
+  },
+  {
+    "id": "A132",
+    "customer": "Lockheed Martin — Grand Prairie",
+    "origin": "Dallas, TX (Warehouse 2)",
+    "destination": "Grand Prairie, TX",
+    "carrier": "OTSL Fleet — Truck 5",
+    "contents": "Industrial fasteners, 14 pallets — ITAR-controlled facility delivery",
+    "priority": "High",
+    "status": "In transit",
+    "eta": "2026-06-10 17:00 CT",
+    "notes": "Driver must present TWIC card at gate. Delivery appointment confirmed for dock 6."
+  }
+]
