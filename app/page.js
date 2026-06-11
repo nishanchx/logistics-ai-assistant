@@ -85,8 +85,8 @@ export default function Home() {
             <p className="kicker">Internal operations assistant</p>
             <h2>Ask about shipments, SOPs, or HR policy</h2>
             <p>
-              An AI agent decides which tools to use for each question — exact
-              shipment lookups, filters, or semantic policy search — and shows
+              An AI agent decides which tools to use for each question, exact
+              shipment lookups, filters, or semantic policy search and shows
               its steps under every answer.
             </p>
             <div className="suggestions">
