@@ -150,6 +150,15 @@ body {
   padding: 0 16px 14px;
 }
 
+.trace-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal);
+  align-self: center;
+}
+
 .tag {
   font-family: var(--font-mono), monospace;
   font-size: 11px;

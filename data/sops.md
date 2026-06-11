@@ -1,4 +1,4 @@
-# OTSL Standard Operating Procedures (Logistics)
+# DispatchDesk Logistics Standard Operating Procedures (Logistics)
 
 ## SOP-DEL-01: Shipment Delay — Customer Notification
 When a shipment's ETA slips by more than 30 minutes:
@@ -19,13 +19,13 @@ To file a damaged shipment report:
 1. Stop unloading and photograph the damage before moving the freight (minimum 4 photos: wide shot, close-up, label/ID visible, packaging condition).
 2. Note the damage on the proof of delivery (POD) before the receiver signs. Never accept a clean signature on damaged freight.
 3. File form DR (Damage Report) in the TMS within 2 hours of discovery, attaching photos.
-4. Notify the customer and the claims coordinator (claims@otsl.com) the same business day.
+4. Notify the customer and the claims coordinator (claims@dispatchdesk.example) the same business day.
 5. Retain damaged packaging until the claim is closed.
 
 ## SOP-DOC-04: Missing Customs / Import Documentation
 If a shipment is missing customs or import paperwork (e.g., FDA import release, commercial invoice):
 1. Place the shipment in "Exception" status — do NOT dispatch.
-2. Contact the compliance team (compliance@otsl.com) with the shipment ID and missing document list.
+2. Contact the compliance team (compliance@dispatchdesk.example) with the shipment ID and missing document list.
 3. Notify the customer within 4 business hours with what is needed and from whom.
 4. Resume transit only after compliance clears the hold in writing.
 

@@ -6,8 +6,20 @@ const SUGGESTIONS = [
   { label: "Track", text: "Where is shipment A123 right now?" },
   { label: "Delays", text: "Which shipments are delayed and why?" },
   { label: "SOP", text: "How do I file a damaged shipment report?" },
-  { label: "HR", text: "When are timesheets due and what happens if I'm late?" },
+  { label: "Agent", text: "Draft the customer delay email for A124 following our SOP." },
 ];
+
+const TOOL_LABELS = {
+  get_shipment: "Looked up shipment",
+  list_shipments: "Filtered shipments",
+  search_policies: "Searched policies",
+};
+
+function traceLabel(step) {
+  const base = TOOL_LABELS[step.tool] || step.tool;
+  const arg = step.args?.id || step.args?.status || step.args?.priority || step.args?.query;
+  return arg ? `${base}: ${arg}` : base;
+}
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
@@ -42,7 +54,7 @@ export default function Home() {
 
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: data.answer, sources: data.sources },
+        { role: "assistant", content: data.answer, trace: data.trace },
       ]);
     } catch (err) {
       setMessages((prev) => [
@@ -64,7 +76,7 @@ export default function Home() {
         <h1>
           Dispatch<span className="accent">Desk</span>
         </h1>
-        <span className="route-tag">RAG · DEMO · DAL-TX</span>
+        <span className="route-tag">AI AGENT · DAL-TX</span>
       </header>
 
       <section className="thread" aria-live="polite">
@@ -73,9 +85,9 @@ export default function Home() {
             <p className="kicker">Internal operations assistant</p>
             <h2>Ask about shipments, SOPs, or HR policy</h2>
             <p>
-              Answers are retrieved from live shipment records and the company
-              handbook, then grounded by an LLM — so every reply cites where it
-              came from.
+              An AI agent decides which tools to use for each question — exact
+              shipment lookups, filters, or semantic policy search — and shows
+              its steps under every answer.
             </p>
             <div className="suggestions">
               {SUGGESTIONS.map((s) => (
@@ -102,11 +114,12 @@ export default function Home() {
                 <span>MSG {String(i + 1).padStart(3, "0")}</span>
               </div>
               <div className="body">{m.content}</div>
-              {m.sources?.length > 0 && (
+              {m.trace?.length > 0 && (
                 <div className="sources">
-                  {m.sources.map((s, j) => (
-                    <span key={j} className="tag" title={`similarity ${s.score}`}>
-                      {s.title}
+                  <span className="trace-label">Agent steps</span>
+                  {m.trace.map((step, j) => (
+                    <span key={j} className="tag">
+                      {j + 1}. {traceLabel(step)}
                     </span>
                   ))}
                 </div>
@@ -148,8 +161,7 @@ export default function Home() {
           </button>
         </div>
         <p className="footnote">
-          Demo data only — answers are grounded in retrieved records, sources
-          shown per reply. Made with ❤️ in Youngstown | Nishan Chaulagain
+          Demo data only — answers are grounded in retrieved records, sources shown per reply. Made with ❤️ in Youngstown | Nishan Chaulagain
         </p>
       </div>
     </main>

@@ -1,4 +1,4 @@
-# OTSL HR & Administration Quick Reference
+# DispatchDesk Logistics HR & Administration Quick Reference
 
 ## Timesheets
 - Hourly employees and interns submit timesheets in the HR portal by Friday 17:00 CT each week.
@@ -12,8 +12,8 @@
 
 ## New Hire & Intern Onboarding
 Day 1 checklist:
-1. Badge photo and building access at the front desk (1133 South Madison Ave).
-2. IT setup: laptop, email, TMS account, and Slack access (submit ticket to it@otsl.com if anything is missing).
+1. Badge photo and building access at the front desk (Building A front desk).
+2. IT setup: laptop, email, TMS account, and Slack access (submit ticket to it@dispatchdesk.example if anything is missing).
 3. Safety orientation — required before entering any warehouse floor.
 4. Review the SOP handbook and sign the acknowledgment form in the HR portal within the first week.
 
@@ -28,8 +28,7 @@ Day 1 checklist:
 - Purchases over $200 require manager pre-approval.
 
 ## Who to Contact
-- IT issues: it@otsl.com
-- Claims (damaged/lost freight): claims@otsl.com
-- Compliance and customs: compliance@otsl.com
-- Payroll and benefits: hr@otsl.com
-- Main office: 214-420-9557
+- IT issues: it@dispatchdesk.example
+- Claims (damaged/lost freight): claims@dispatchdesk.example
+- Compliance and customs: compliance@dispatchdesk.example
+- Payroll and benefits: hr@dispatchdesk.example
